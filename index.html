@@ -1,40 +1,1006 @@
-Política de Privacidad de GeoExpert GPT
-Fecha de entrada en vigor: [Fecha actual]
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Can I Run It? — Demo viral para comparar modelos IA</title>
+    <meta
+      name="description"
+      content="Una landing demo, agresiva y viral, para descubrir si una IA realmente puede ejecutar tu idea, resolver tareas y ganarse internet."
+    />
+    <meta property="og:title" content="Can I Run It? — Demo viral para comparar modelos IA" />
+    <meta
+      property="og:description"
+      content="Más visual, más compartible y más competitiva: una demo conceptual para testear prompts, velocidad y hype entre modelos IA."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#09090f" />
+    <style>
+      :root {
+        --bg: #09090f;
+        --panel: rgba(16, 18, 31, 0.8);
+        --panel-strong: rgba(23, 26, 45, 0.98);
+        --text: #f5f7ff;
+        --muted: #aab3d3;
+        --line: rgba(255, 255, 255, 0.08);
+        --primary: #7c5cff;
+        --secondary: #18e0b5;
+        --accent: #ff6b9d;
+        --warn: #ffd166;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        --radius: 24px;
+      }
 
-1. Introducción
-GeoExpert GPT  se compromete a proteger la privacidad de nuestros usuarios ("usuario" o "usted"). Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando utiliza nuestro asistente de IA, GeoExpert GPT.
+      * {
+        box-sizing: border-box;
+      }
 
-2. Información que recopilamos
-GeoExpert GPT puede recopilar la siguiente información:
+      html {
+        scroll-behavior: smooth;
+      }
 
-Consultas y entradas de texto que proporciona al interactuar con el asistente.
-URLs de imágenes satelitales que comparte para análisis.
-Datos espectrales que proporciona para la identificación de minerales.
-Información de la consulta que realiza a nuestra base de datos geológica.
-3. Cómo utilizamos su información
-Utilizamos la información recopilada para:
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(124, 92, 255, 0.35), transparent 30%),
+          radial-gradient(circle at top right, rgba(24, 224, 181, 0.16), transparent 24%),
+          radial-gradient(circle at bottom center, rgba(255, 107, 157, 0.18), transparent 20%),
+          linear-gradient(180deg, #09090f 0%, #0d1020 55%, #09090f 100%);
+      }
 
-Proporcionar análisis de imágenes satelitales.
-Identificar minerales basados en datos espectrales.
-Responder a consultas sobre información geológica.
-Mejorar y optimizar nuestro servicio.
-Cumplir con obligaciones legales.
-4. Compartición de datos
-No compartimos su información personal con terceros, excepto:
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 85%);
+      }
 
-Cuando sea necesario para proporcionar el servicio (por ejemplo, procesamiento de imágenes).
-Cuando lo exija la ley o en respuesta a solicitudes legales válidas.
-5. Seguridad de los datos
-Implementamos medidas de seguridad para proteger su información contra acceso no autorizado, alteración, divulgación o destrucción.
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-6. Sus derechos
-Usted tiene derecho a:
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
 
-Acceder a la información personal que tenemos sobre usted.
-Corregir cualquier información inexacta.
-Solicitar la eliminación de su información personal.
-7. Cambios a esta política
-Podemos actualizar esta política de privacidad periódicamente. Le notificaremos cualquier cambio publicando la nueva política de privacidad en esta página.
+      .pill,
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        backdrop-filter: blur(20px);
+      }
 
-8. Contacto
-Si tiene preguntas sobre esta política de privacidad, por favor contáctenos en: mjpaupc@gmail.com
+      .pill {
+        padding: 0.65rem 1rem;
+        background: rgba(11, 13, 24, 0.75);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .chip {
+        padding: 0.38rem 0.8rem;
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 0.82rem;
+        color: #d7ddf7;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(18px);
+        background: rgba(9, 9, 15, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: 0 12px 28px rgba(124, 92, 255, 0.35);
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 4.8rem 0 3rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .hero-copy h1 {
+        margin: 1rem 0;
+        font-size: clamp(2.6rem, 7vw, 5.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+
+      .hero-copy .gradient {
+        background: linear-gradient(135deg, #fff 5%, #b5bfff 40%, #7c5cff 60%, #18e0b5 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-copy p {
+        margin: 0;
+        max-width: 62ch;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin: 1.8rem 0 1.2rem;
+      }
+
+      .btn {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 1rem 1.3rem;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        color: white;
+        background: linear-gradient(135deg, var(--primary), #9b8cff, var(--accent));
+        box-shadow: 0 20px 38px rgba(124, 92, 255, 0.32);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .social-proof {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.35rem;
+      }
+
+      .hero-card,
+      .panel,
+      .battle-card,
+      .quote,
+      .step,
+      .leaderboard-item,
+      .share-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(22px);
+      }
+
+      .hero-card {
+        padding: 1.2rem;
+      }
+
+      .hero-card-top,
+      .mini-stat,
+      .step-head,
+      .leaderboard-item,
+      .battle-meta,
+      .share-row,
+      .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .scoreboard {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .score {
+        padding: 1rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .score strong,
+      .metric strong,
+      .leaderboard-item strong {
+        display: block;
+        font-size: 1.75rem;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+
+      .score span,
+      .metric span,
+      .leaderboard-item span,
+      .eyebrow,
+      .subtle {
+        color: var(--muted);
+      }
+
+      .battlefeed {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .battlefeed ul {
+        margin: 0.8rem 0 0;
+        padding-left: 1.1rem;
+        color: #dde3ff;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      section {
+        padding: 1.3rem 0 4.5rem;
+      }
+
+      .section-heading {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: end;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-heading h2 {
+        margin: 0.35rem 0 0;
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        letter-spacing: -0.03em;
+      }
+
+      .section-heading p {
+        margin: 0;
+        max-width: 60ch;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .metrics,
+      .steps,
+      .quotes,
+      .share-grid,
+      .footer-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .metric,
+      .step,
+      .quote,
+      .share-card {
+        padding: 1.3rem;
+      }
+
+      .metric {
+        min-height: 180px;
+      }
+
+      .metric strong {
+        font-size: 2rem;
+      }
+
+      .battle-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 1rem;
+      }
+
+      .panel {
+        padding: 1.2rem;
+      }
+
+      .prompt-area {
+        width: 100%;
+        min-height: 170px;
+        resize: vertical;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        background: rgba(3, 5, 12, 0.65);
+        color: var(--text);
+        font: inherit;
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+
+      .prompt-area:focus {
+        outline: 2px solid rgba(24, 224, 181, 0.5);
+        border-color: transparent;
+      }
+
+      .battle-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .battle-card {
+        padding: 1.15rem;
+      }
+
+      .battle-stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .battle-title {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .battle-result {
+        margin: 0.9rem 0 0;
+        color: #dce3ff;
+        line-height: 1.7;
+      }
+
+      .leaderboard {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .leaderboard-item {
+        padding: 1rem 1.1rem;
+      }
+
+      .rank {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .step-number {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+      }
+
+      .step p,
+      .quote p,
+      .share-card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .quotes,
+      .share-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .quote em {
+        display: block;
+        margin-top: 1rem;
+        color: #dce3ff;
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .share-card textarea {
+        width: 100%;
+        min-height: 160px;
+        margin-top: 0.9rem;
+        padding: 1rem;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        font: inherit;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        padding-bottom: 3rem;
+      }
+
+      footer {
+        padding-bottom: 2rem;
+      }
+
+      .tiny {
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .battle-layout,
+        .footer-grid,
+        .metrics,
+        .steps,
+        .quotes,
+        .share-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          padding-top: 3rem;
+        }
+
+        .container {
+          width: min(100% - 20px, 1180px);
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(2.5rem, 14vw, 4rem);
+        }
+
+        .scoreboard {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark">⚡</span>
+          <span>Can I Run It?</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#battle">Battle Lab</a>
+          <a href="#loops">Growth Loops</a>
+          <a href="#share">Plantillas virales</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="pill">🔥 De idea simple a producto compartible en 1 scroll</div>
+            <h1>
+              La web que compara
+              <span class="gradient">modelos reales con tu prompt y resultados posteables.</span>
+            </h1>
+            <p>
+              En vez de una landing fría, esta propuesta convierte la comparación de GPT-4.1, Claude 3.7 Sonnet y Gemini 2.5 Pro en un deporte: retos en vivo, prompts compartibles, ranking social y loops pensados para que la gente diga “pásame ese prompt”.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#battle">Probar batalla demo</a>
+              <a class="btn btn-secondary" href="#share">Ver loops virales</a>
+            </div>
+            <div class="social-proof">
+              <span class="chip">GPT-4.1 vs Claude vs Gemini</span>
+              <span class="chip">Rankings públicos</span>
+              <span class="chip">Share cards listas</span>
+              <span class="chip">Modo roast / hype</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-top">
+              <div>
+                <div class="eyebrow">Radar viral</div>
+                <strong>¿Qué haría que esto supere a canirun.ai con modelos reales?</strong>
+              </div>
+              <span class="chip">Demo concept</span>
+            </div>
+            <div class="scoreboard">
+              <div class="score">
+                <strong>9.4/10</strong>
+                <span>Potencial de share si cada resultado incluye modelo, costo, latencia y ganador.</span>
+              </div>
+              <div class="score">
+                <strong>+41%</strong>
+                <span>Más intención de prueba cuando el visitante compara proveedores de verdad.</span>
+              </div>
+            </div>
+            <div class="battlefeed">
+              <div class="mini-stat">
+                <strong>Live concepts</strong>
+                <span class="subtle">Qué deberías lanzar primero</span>
+              </div>
+              <ul>
+                <li><strong>Prompt Arena:</strong> GPT-4.1, Claude 3.7 Sonnet y Gemini 2.5 Pro en el mismo reto.</li>
+                <li><strong>Receipts Mode:</strong> publica capturas, costo, tiempo y output en una tarjeta bonita.</li>
+                <li><strong>Boss Level Prompts:</strong> biblioteca de prompts “imposibles” para medir razonamiento, ejecución y claridad entre modelos reales.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Ventajas competitivas</div>
+              <h2>Cómo hacerlo más adictivo, útil y compartible.</h2>
+            </div>
+            <p>
+              La clave no es sólo comparar IAs. La clave es mostrar modelos reales en escenarios donde la gente quiera presumir, discutir y demostrar cuál resuelve mejor su caso.
+            </p>
+          </div>
+
+          <div class="metrics">
+            <article class="metric panel">
+              <span class="eyebrow">01 · Utilidad inmediata</span>
+              <strong>Trae tu prompt</strong>
+              <span>
+                El visitante no mira una demo estática: pega su problema real y ve si un modelo cumple, falla o improvisa.
+              </span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">02 · Viralidad orgánica</span>
+              <strong>Resultados posteables</strong>
+              <span>
+                Cada batalla termina en una tarjeta visual con ganadores, costo, tiempo, roast y CTA para que otro lo intente.
+              </span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">03 · Repetición</span>
+              <strong>Loop de revancha</strong>
+              <span>
+                “Tu prompt destrozó a X, ahora prueba contra Y”. Ese cambio sube sesiones, comparaciones y comentarios.
+              </span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">04 · Comunidad</span>
+              <strong>Ranking público</strong>
+              <span>
+                Publica los prompts top, retos semanales y un leaderboard por caso de uso: coding, growth, research y content ops.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Modelos reales</div>
+              <h2>Usa nombres de verdad y da contexto útil antes de comparar.</h2>
+            </div>
+            <p>
+              Esta demo ya no usa nombres inventados. La narrativa, las tarjetas y el battle lab están centrados en modelos ampliamente reconocidos para que la propuesta se sienta creíble desde el primer scroll.
+            </p>
+          </div>
+          <div class="metrics">
+            <article class="metric panel">
+              <span class="eyebrow">OpenAI</span>
+              <strong>GPT-4.1</strong>
+              <span>Posicionado en la landing como modelo fuerte para ejecución precisa, tool use y prompts operativos.</span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">Anthropic</span>
+              <strong>Claude 3.7 Sonnet</strong>
+              <span>Posicionado como modelo fuerte para estrategia, razonamiento híbrido y escritura larga.</span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">Google</span>
+              <strong>Gemini 2.5 Pro</strong>
+              <span>Posicionado como modelo fuerte para contexto amplio, multimodalidad y análisis de materiales complejos.</span>
+            </article>
+            <article class="metric panel">
+              <span class="eyebrow">Credibilidad</span>
+              <strong>Casos reales</strong>
+              <span>El valor está en comparar outputs, costo y latencia sobre prompts reales; no en inventar marcas ficticias.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="battle">
+        <div class="container battle-layout">
+          <div class="panel">
+            <div class="section-heading">
+              <div>
+                <div class="pill">Battle Lab</div>
+                <h2>Una demo que hace que la gente juegue.</h2>
+              </div>
+            </div>
+            <label class="subtle" for="promptInput">Pega un prompt y compáralo contra modelos reales:</label>
+            <textarea class="prompt-area" id="promptInput">Compara cómo responderían GPT-4.1, Claude 3.7 Sonnet y Gemini 2.5 Pro a un lanzamiento de una app IA que quiere explotar en TikTok y X con sólo 500 dólares de presupuesto.</textarea>
+            <div class="battle-actions">
+              <button class="btn btn-primary" id="battleBtn">Lanzar battle</button>
+              <button class="btn btn-secondary" id="shuffleBtn">Prompt sorpresa</button>
+            </div>
+          </div>
+
+          <div class="battle-stack">
+            <article class="battle-card" id="winnerCard">
+              <div class="battle-meta">
+                <div class="battle-title">
+                  <div class="avatar">A</div>
+                  <div>
+                    <strong id="winnerName">GPT-4.1</strong>
+                    <div class="subtle">Ganador provisional en esta demo</div>
+                  </div>
+                </div>
+                <span class="chip" id="winnerScore">Score 91</span>
+              </div>
+              <p class="battle-result" id="winnerText">
+                Convierte tu presupuesto limitado en una serie de piezas remezclables: hook en vídeo corto, plantilla meme, experimento semanal y CTA para que otros publiquen su versión. La gracia es ver cómo responde un modelo real bajo restricciones concretas.
+              </p>
+            </article>
+
+            <article class="battle-card">
+              <div class="battle-meta">
+                <div class="battle-title">
+                  <div class="avatar">B</div>
+                  <div>
+                    <strong id="runnerName">Claude 3.7 Sonnet</strong>
+                    <div class="subtle">Finalista de esta ronda</div>
+                  </div>
+                </div>
+                <span class="chip" id="runnerScore">Score 84</span>
+              </div>
+              <p class="battle-result" id="runnerText">
+                Publica 10 piezas agresivas en 7 días, reutiliza comentarios como contenido y compara resultados con capturas. Menos inspiración, más benchmark accionable.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Leaderboard</div>
+              <h2>Haz visible quién domina los prompts difíciles.</h2>
+            </div>
+            <p>
+              La competencia mueve comunidad. Si la gente puede rankear, comentar y compartir “mira cómo respondió este modelo a mi prompt”, vuelven por ego, curiosidad y aprendizaje.
+            </p>
+          </div>
+          <div class="leaderboard">
+            <article class="leaderboard-item">
+              <div class="battle-title">
+                <div class="rank">#1</div>
+                <div>
+                  <strong>GPT-4.1</strong>
+                  <span>Buen fit para ejecución precisa, herramientas y prompts operativos.</span>
+                </div>
+              </div>
+              <span class="chip">API real</span>
+            </article>
+            <article class="leaderboard-item">
+              <div class="battle-title">
+                <div class="rank">#2</div>
+                <div>
+                  <strong>Claude 3.7 Sonnet</strong>
+                  <span>Buen fit para estrategia, escritura larga y razonamiento híbrido.</span>
+                </div>
+              </div>
+              <span class="chip">Modelo real</span>
+            </article>
+            <article class="leaderboard-item">
+              <div class="battle-title">
+                <div class="rank">#3</div>
+                <div>
+                  <strong>Gemini 2.5 Pro</strong>
+                  <span>Buen fit para multimodalidad, contexto amplio y análisis de repositorios.</span>
+                </div>
+              </div>
+              <span class="chip">Modelo real</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="loops">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Growth loops</div>
+              <h2>Tres mecánicas que pueden volverlo viral.</h2>
+            </div>
+            <p>
+              Si quieres superarlo, no copies sólo estética: diseña una máquina de participación sobre modelos reales. Estas mecánicas convierten tráfico en contenido generado por usuarios.
+            </p>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <div class="step-head">
+                <span class="step-number">1</span>
+                <span class="chip">Challenge</span>
+              </div>
+              <h3>Prompt of the Day</h3>
+              <p>
+                Un reto diario con CTA claro: “Si tu modelo gana, comparte la tarjeta”. Recompensa a quien consiga el mejor output o peor fail.
+              </p>
+            </article>
+            <article class="step">
+              <div class="step-head">
+                <span class="step-number">2</span>
+                <span class="chip">Identity</span>
+              </div>
+              <h3>Perfil público con wins</h3>
+              <p>
+                Cada usuario colecciona victorias, badges y prompts guardados. La gente comparte progreso, no sólo screenshots sueltas.
+              </p>
+            </article>
+            <article class="step">
+              <div class="step-head">
+                <span class="step-number">3</span>
+                <span class="chip">Distribution</span>
+              </div>
+              <h3>Auto-contenido posteable</h3>
+              <p>
+                Convierte cada resultado en post listo para X, LinkedIn o TikTok: resumen, punchline, CTA y visual reconocible.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Positioning</div>
+              <h2>Mensajes que venden mejor que una comparación aburrida.</h2>
+            </div>
+          </div>
+          <div class="quotes">
+            <article class="quote">
+              <p>“No te vendemos hype. Te enseñamos cómo responden GPT-4.1, Claude 3.7 Sonnet y Gemini 2.5 Pro con tu prompt real.”</p>
+              <em>— Hook para homepage</em>
+            </article>
+            <article class="quote">
+              <p>“Trae tu caso real: código, growth, research o contenido. Nosotros lo enfrentamos contra modelos de verdad.”</p>
+              <em>— Hook para redes</em>
+            </article>
+            <article class="quote">
+              <p>“Los benchmarks impresionan. Los prompts reales deciden.”</p>
+              <em>— Hook para anuncios / hero</em>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="share">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="pill">Plantillas virales</div>
+              <h2>Copy listo para publicar y crecer más rápido.</h2>
+            </div>
+            <p>
+              La página no sólo vende la idea: también le da al usuario la munición para compartir resultados reales y atraer más gente al experimento.
+            </p>
+          </div>
+          <div class="share-grid">
+            <article class="share-card">
+              <div class="share-row">
+                <strong>Post para X</strong>
+                <span class="chip">Hot take</span>
+              </div>
+              <p>Perfecto para comparativas veloces, polémica y curiosidad.</p>
+              <textarea readonly>Acabo de poner el mismo prompt frente a dos modelos de IA y la diferencia fue brutal.
+
+Uno me dio estrategia. El otro me dio relleno bonito.
+
+Si quieres ver cuál realmente ejecuta tu idea, prueba esta battle 👇</textarea>
+            </article>
+            <article class="share-card">
+              <div class="share-row">
+                <strong>Post para LinkedIn</strong>
+                <span class="chip">Credibilidad</span>
+              </div>
+              <p>Para founders, marketers y equipos que comparan productividad real.</p>
+              <textarea readonly>Hoy probé una nueva forma de evaluar herramientas de IA: no con benchmarks abstractos, sino con prompts de negocio reales.
+
+Lo interesante no fue quién respondió más bonito, sino quién propuso pasos accionables con restricciones concretas.
+
+Ese enfoque debería ser el estándar.</textarea>
+            </article>
+            <article class="share-card">
+              <div class="share-row">
+                <strong>Script para TikTok</strong>
+                <span class="chip">UGC loop</span>
+              </div>
+              <p>Para vídeos cortos con formato reto, reacción y resultado.</p>
+              <textarea readonly>“Dicen que todas las IAs ya hacen lo mismo. Les puse el mismo prompt imposible y no…
+
+Mira esto. Esta me dio humo. Esta otra me dio un plan listo para ejecutar.
+
+Comenta tu prompt y hago parte 2.”</textarea>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer-grid">
+          <div class="panel">
+            <div class="pill">TL;DR</div>
+            <h2>Para superar a canirun.ai, usa modelos reales, casos reales y contenido social.</h2>
+            <p class="subtle">
+              Esta versión empuja una dirección más ambiciosa: visual premium, interacción inmediata y una narrativa centrada en “demuéstralo con GPT-4.1, Claude y Gemini”.
+            </p>
+          </div>
+          <div class="panel footer-row">
+            <div>
+              <strong>Siguiente paso realista</strong>
+              <p class="tiny">Conectar APIs, normalizar costo/latencia por proveedor y guardar resultados compartibles por prompt.</p>
+            </div>
+            <a class="btn btn-primary" href="#top">Volver arriba</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const promptInput = document.getElementById('promptInput');
+      const battleBtn = document.getElementById('battleBtn');
+      const shuffleBtn = document.getElementById('shuffleBtn');
+      const winnerName = document.getElementById('winnerName');
+      const winnerScore = document.getElementById('winnerScore');
+      const winnerText = document.getElementById('winnerText');
+      const runnerName = document.getElementById('runnerName');
+      const runnerScore = document.getElementById('runnerScore');
+      const runnerText = document.getElementById('runnerText');
+
+      const prompts = [
+        'Diseña una campaña para vender una app de productividad IA a freelancers con cero audiencia inicial.',
+        'Dame un plan para hacer viral una landing de IA en X y TikTok sin pagar influencers.',
+        'Crea una estrategia de lanzamiento para un comparador de modelos IA con foco en founders y marketers.',
+        'Explícame cómo convertir un benchmark aburrido en un producto social que la gente quiera compartir.',
+      ];
+
+      const outcomes = [
+        {
+          winner: 'GPT-4.1',
+          winnerPts: 'Score 94 · ejecución',
+          winnerCopy:
+            'Ataca el prompt con estructura accionable, pasos claros, restricciones explícitas y un output listo para convertir en experimento o deliverable.',
+          runner: 'Claude 3.7 Sonnet',
+          runnerPts: 'Score 90 · estrategia',
+          runnerCopy:
+            'Aporta narrativa fuerte, framing y criterio. Puede destacar cuando el reto exige más razonamiento que velocidad de ejecución.',
+        },
+        {
+          winner: 'Claude 3.7 Sonnet',
+          winnerPts: 'Score 92 · reasoning',
+          winnerCopy:
+            'Brilla cuando el reto pide matiz, argumentación y una lectura estratégica del contexto antes de proponer acciones concretas.',
+          runner: 'Gemini 2.5 Pro',
+          runnerPts: 'Score 89 · contexto',
+          runnerCopy:
+            'Se vuelve competitivo cuando el caso exige procesar mucho contexto, múltiples materiales o entradas multimodales.',
+        },
+        {
+          winner: 'Gemini 2.5 Pro',
+          winnerPts: 'Score 96 · multimodal',
+          winnerCopy:
+            'Gana cuando el prompt requiere combinar contexto largo, análisis complejo y una respuesta capaz de abarcar varios tipos de insumo.',
+          runner: 'GPT-4.1',
+          runnerPts: 'Score 91 · precision',
+          runnerCopy:
+            'Sigue siendo fortísimo si el usuario prioriza precisión operativa, tool calling o un plan corto y ejecutable.',
+        },
+      ];
+
+      let turn = 0;
+
+      function runBattle() {
+        const selected = outcomes[turn % outcomes.length];
+        const prompt = promptInput.value.trim();
+        winnerName.textContent = selected.winner;
+        winnerScore.textContent = selected.winnerPts;
+        winnerText.textContent = `${selected.winnerCopy} Prompt evaluado: “${prompt || prompts[0]}”.`;
+        runnerName.textContent = selected.runner;
+        runnerScore.textContent = selected.runnerPts;
+        runnerText.textContent = `${selected.runnerCopy} Prompt evaluado: “${prompt || prompts[0]}”.`;
+        turn += 1;
+      }
+
+      battleBtn.addEventListener('click', runBattle);
+      shuffleBtn.addEventListener('click', () => {
+        promptInput.value = prompts[Math.floor(Math.random() * prompts.length)];
+        runBattle();
+      });
+    </script>
+  </body>
+</html>
