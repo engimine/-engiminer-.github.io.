@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prompt profesional para el seguimiento semanal de actualizaciones de los Documentos Básicos del Código Técnico de la Edificación (CTE).">
+  <title>Seguimiento semanal del CTE | Arquitectura y Construcción</title>
+  <style>
+    :root{--bg:#f5f7f8;--surface:#ffffff;--text:#172026;--muted:#5d6b73;--line:#dfe5e8;--accent:#173f5f;--accent2:#245b7a;--soft:#eef3f6;--ok:#eaf4ee;--radius:14px;--shadow:0 10px 30px rgba(20,40,55,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1120px,92%);margin:auto}
+    header{background:linear-gradient(135deg,#102b3d,#1f536f);color:white;padding:72px 0 58px}.eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.13em;font-weight:700;opacity:.8;margin:0 0 12px}.hero{display:grid;grid-template-columns:1.5fr .7fr;gap:38px;align-items:end}.hero h1{font-size:clamp(2.25rem,5vw,4.6rem);line-height:1.02;margin:0 0 20px;letter-spacing:-.045em}.hero p{font-size:1.12rem;max-width:760px;color:#dce7ed;margin:0}.hero-card{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);padding:22px;border-radius:var(--radius)}.hero-card strong{display:block;font-size:1rem;margin-bottom:8px}.hero-card span{display:block;color:#dce7ed;font-size:.95rem}
+    nav{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0}.nav-title{font-weight:800;color:var(--text)}.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem}.nav-links a{color:var(--muted)}
+    main{padding:54px 0 70px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:38px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.card h2,.card h3{margin-top:0;line-height:1.2}.card p:last-child{margin-bottom:0}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.meta div{background:var(--soft);padding:18px;border-radius:12px}.meta b{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px}.meta span{font-weight:700}
+    .section-title{margin:58px 0 18px}.section-title h2{font-size:1.85rem;margin:0 0 8px}.section-title p{margin:0;color:var(--muted)}
+    .prompt-shell{background:#101820;color:#edf3f5;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}.prompt-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #2d3941;background:#16232c}.prompt-top span{font-size:.9rem;color:#b9c7ce}.copy-btn{border:1px solid #52616b;background:#23333e;color:white;border-radius:8px;padding:9px 14px;font-weight:700;cursor:pointer}.copy-btn:hover{background:#2c414e}.prompt{white-space:pre-wrap;padding:28px;max-height:none;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.91rem;line-height:1.62}
+    .db-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.db{padding:18px;background:white;border:1px solid var(--line);border-radius:12px}.db b{display:block;color:var(--accent);margin-bottom:4px}.db span{font-size:.92rem;color:var(--muted)}
+    .steps{counter-reset:step;display:grid;gap:14px}.step{counter-increment:step;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.step:before{content:counter(step);width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:white;font-weight:800}.step h3{margin:2px 0 5px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.94rem}
+    .official{background:var(--ok);border:1px solid #cce2d4;padding:22px;border-radius:12px}.official strong{display:block;margin-bottom:5px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-block;padding:11px 16px;border-radius:9px;font-weight:750;border:1px solid var(--accent)}.btn.primary{background:var(--accent);color:white}.btn.secondary{background:white;color:var(--accent)}
+    footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}.small{font-size:.87rem;color:var(--muted)}
+    @media(max-width:800px){.hero,.grid{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.db-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}header{padding:52px 0 42px}}
+    @media(max-width:520px){.db-grid{grid-template-columns:1fr}.prompt{padding:18px;font-size:.84rem}.card{padding:21px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Herramienta para equipos técnicos</p>
+        <h1>Seguimiento semanal del Código Técnico de la Edificación</h1>
+        <p>Prompt profesional para arquitectos, ingenieros, aparejadores, direcciones facultativas, consultoras y empresas de construcción que quieran revisar semanalmente posibles cambios en los Documentos Básicos del CTE.</p>
+      </div>
+      <div class="hero-card">
+        <strong>Frecuencia recomendada</strong>
+        <span>Todos los lunes a las 09:00 h</span>
+        <strong style="margin-top:16px">Fuente prioritaria</strong>
+        <span>Web oficial del Código Técnico de la Edificación</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="nav-title">Seguimiento CTE</div>
+      <div class="nav-links"><a href="#objetivo">Objetivo</a><a href="#documentos">Documentos</a><a href="#prompt">Prompt</a><a href="#uso">Cómo usarlo</a></div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="objetivo" class="grid">
+      <article class="card">
+        <h2>Objetivo</h2>
+        <p>Disponer de una revisión normativa recurrente que permita detectar modificaciones, correcciones, nuevas versiones consolidadas o documentación complementaria del CTE y valorar su posible impacto en proyectos y obras.</p>
+      </article>
+      <article class="card">
+        <h2>Control y trazabilidad</h2>
+        <p>El prompt obliga a comparar cada revisión con la semana anterior, distinguir entre normas aprobadas, borradores y consultas públicas, y documentar la fuente oficial utilizada.</p>
+      </article>
+    </section>
+
+    <section class="meta" aria-label="Resumen de la tarea">
+      <div><b>Periodicidad</b><span>Semanal</span></div>
+      <div><b>Día y hora</b><span>Lunes, 09:00 h</span></div>
+      <div><b>Resultado</b><span>Notificación siempre</span></div>
+    </section>
+
+    <section id="documentos">
+      <div class="section-title"><h2>Documentos Básicos incluidos</h2><p>Revisión de los principales Documentos Básicos y de la documentación oficial complementaria.</p></div>
+      <div class="db-grid">
+        <div class="db"><b>DB-SE</b><span>Seguridad Estructural</span></div>
+        <div class="db"><b>DB-SI</b><span>Seguridad en caso de incendio</span></div>
+        <div class="db"><b>DB-SUA</b><span>Seguridad de utilización y accesibilidad</span></div>
+        <div class="db"><b>DB-HE</b><span>Ahorro de energía</span></div>
+        <div class="db"><b>DB-HS</b><span>Salubridad</span></div>
+        <div class="db"><b>DB-HR</b><span>Protección frente al ruido</span></div>
+      </div>
+    </section>
+
+    <section id="prompt">
+      <div class="section-title"><h2>Prompt listo para copiar</h2><p>Cópialo y úsalo para configurar una tarea recurrente en ChatGPT.</p></div>
+      <div class="prompt-shell">
+        <div class="prompt-top"><span>Prompt de seguimiento semanal del CTE</span><button class="copy-btn" id="copyBtn" type="button">Copiar prompt</button></div>
+        <div class="prompt" id="promptText">TAREA SEMANAL — SEGUIMIENTO DE ACTUALIZACIONES DEL CÓDIGO TÉCNICO DE LA EDIFICACIÓN (CTE)
+
+OBJETIVO
+
+Cada semana deberás comprobar si se han publicado nuevas actualizaciones, modificaciones, revisiones, correcciones o documentos relacionados con los Documentos Básicos del Código Técnico de la Edificación (CTE).
+
+El objetivo es disponer de una alerta normativa semanal fiable que permita identificar cualquier cambio que pueda afectar a proyectos de arquitectura, ingeniería, construcción, rehabilitación o instalaciones.
+
+FUENTE OFICIAL OBLIGATORIA
+
+Realiza la comprobación prioritariamente en la web oficial del Código Técnico de la Edificación:
+https://www.codigotecnico.org/
+
+La información deberá contrastarse siempre con fuentes oficiales. No des por válida una modificación basándote únicamente en blogs, redes sociales, prensa, publicaciones de despachos profesionales, colegios profesionales, páginas comerciales o fuentes de terceros.
+
+Estas fuentes podrán utilizarse como información complementaria, pero cualquier modificación deberá verificarse en una fuente oficial.
+
+DOCUMENTOS QUE DEBES REVISAR
+
+Comprueba especialmente posibles cambios relacionados con:
+- DB-SE — Seguridad Estructural.
+- DB-SI — Seguridad en caso de incendio.
+- DB-SUA — Seguridad de utilización y accesibilidad.
+- DB-HE — Ahorro de energía.
+- DB-HS — Salubridad.
+- DB-HR — Protección frente al ruido.
+
+También deberás comprobar documentos de apoyo, documentos reconocidos, guías de aplicación, comentarios y documentos interpretativos oficiales, correcciones de errores, nuevas versiones consolidadas, modificaciones normativas que afecten al CTE, órdenes ministeriales, reales decretos, resoluciones y otras disposiciones oficiales relacionadas.
+
+COMPARACIÓN CON LA REVISIÓN ANTERIOR
+
+Compara la información disponible con la revisión realizada la semana anterior. Identifica cualquier documento nuevo, cambio de versión, modificación, corrección, sustitución, nueva disposición normativa, cambio en criterios técnicos o actualización de documentos de apoyo.
+
+No consideres como novedad un documento que ya hubiera sido detectado y comunicado en revisiones anteriores.
+
+SI EXISTEN ACTUALIZACIONES
+
+Comienza el informe indicando: ACTUALIZACIÓN DEL CTE DETECTADA.
+
+Para cada actualización encontrada, indica:
+1. Documento afectado.
+2. Fecha de publicación o actualización.
+3. Tipo de modificación.
+4. Descripción de qué ha cambiado.
+5. Resumen técnico de la modificación.
+6. Principales implicaciones técnicas.
+7. Profesionales o proyectos afectados.
+8. Fecha de entrada en vigor, si existe.
+9. Periodo transitorio, si existe.
+10. Enlace directo a la fuente oficial.
+11. Acciones recomendadas.
+
+Analiza especialmente si la modificación puede afectar a proyectos en redacción, proyectos ya presentados, licencias de obras, obras en ejecución, rehabilitaciones, cambios de uso, instalaciones, eficiencia energética, seguridad contra incendios, accesibilidad, salubridad, estructuras o aislamiento acústico.
+
+Cuando sea posible, estructura el análisis como:
+SITUACIÓN ANTERIOR: qué establecía el documento anterior.
+SITUACIÓN ACTUAL: qué establece la nueva versión.
+IMPACTO TÉCNICO: qué debería revisar o modificar un técnico como consecuencia del cambio.
+
+SI NO EXISTEN ACTUALIZACIONES
+
+Debes notificar igualmente el resultado de la comprobación.
+
+Indica: REVISIÓN SEMANAL DEL CTE COMPLETADA.
+Fecha de revisión: [fecha]
+Estado: Sin cambios.
+
+Incluye expresamente: "No se han detectado nuevas modificaciones o actualizaciones de los Documentos Básicos del Código Técnico de la Edificación desde la última revisión realizada."
+
+FORMATO DEL INFORME
+
+REVISIÓN SEMANAL DEL CÓDIGO TÉCNICO DE LA EDIFICACIÓN
+Fecha de revisión: [DD/MM/AAAA]
+Estado: Sin cambios / Nuevas actualizaciones detectadas
+
+Documentos revisados:
+- DB-SE
+- DB-SI
+- DB-SUA
+- DB-HE
+- DB-HS
+- DB-HR
+- Documentación complementaria
+
+Novedades: [indicar novedades o confirmar que no existen]
+Impacto técnico: [explicar posibles consecuencias cuando proceda]
+Proyectos potencialmente afectados: [indicar tipos de proyecto]
+Acciones recomendadas: [indicar revisiones o medidas necesarias]
+Entrada en vigor: [fecha y posibles periodos transitorios]
+Fuentes oficiales: [enlaces directos consultados]
+
+PROGRAMACIÓN DE LA TAREA
+
+Ejecuta esta comprobación todos los lunes a las 09:00 h. Periodicidad semanal.
+
+Debes enviar una notificación siempre, independientemente del resultado: si existen novedades, informa detalladamente de las modificaciones; si no existen, confirma que la revisión se ha realizado y que no se han detectado cambios.
+
+REGLAS DE VERIFICACIÓN
+
+- No inventes cambios normativos.
+- No presupongas que una norma ha cambiado.
+- Comprueba siempre la fecha y versión de los documentos.
+- Prioriza las fuentes oficiales.
+- Diferencia claramente entre norma aprobada, propuesta, borrador y consulta pública.
+- Si existe incertidumbre, indícalo expresamente.
+- Si una información no puede verificarse en una fuente oficial, indícalo.
+- Incluye los enlaces utilizados para realizar la comprobación.
+- Evita repetir como nueva una actualización ya comunicada.
+- Presta especial atención a fechas de entrada en vigor y disposiciones transitorias.
+
+RESULTADO ESPERADO
+
+El informe semanal debe permitir responder rápidamente a cinco preguntas: ¿Se ha producido alguna modificación? ¿Qué ha cambiado? ¿Desde cuándo es aplicable? ¿Qué proyectos o actuaciones pueden verse afectados? ¿Es necesario adoptar alguna medida o revisar documentación técnica existente?</div>
+      </div>
+    </section>
+
+    <section id="uso">
+      <div class="section-title"><h2>Cómo utilizarlo en un equipo técnico</h2><p>Una pauta sencilla para implantar la revisión sin perder trazabilidad.</p></div>
+      <div class="steps">
+        <div class="step"><div><h3>Copia el prompt</h3><p>Utiliza el botón de copia y pega el contenido en ChatGPT.</p></div></div>
+        <div class="step"><div><h3>Programa la recurrencia</h3><p>Configura la tarea para todos los lunes a las 09:00 h y solicita notificación tanto si existen cambios como si no.</p></div></div>
+        <div class="step"><div><h3>Conserva el histórico</h3><p>Mantén las revisiones anteriores para poder comparar fechas, versiones y modificaciones ya notificadas.</p></div></div>
+        <div class="step"><div><h3>Valida antes de aplicar</h3><p>Antes de modificar un proyecto o adoptar una decisión contractual, comprueba la disposición oficial, su entrada en vigor y el régimen transitorio aplicable.</p></div></div>
+      </div>
+    </section>
+
+    <section style="margin-top:38px" class="official">
+      <strong>Fuente oficial de referencia</strong>
+      <span>Portal oficial del Código Técnico de la Edificación.</span>
+      <div class="actions"><a class="btn primary" href="https://www.codigotecnico.org/" target="_blank" rel="noopener noreferrer">Abrir Código Técnico</a><a class="btn secondary" href="#prompt">Ir al prompt</a></div>
+    </section>
+
+    <p class="small" style="margin-top:22px">Esta herramienta facilita el seguimiento documental y no sustituye el criterio profesional ni la comprobación de la normativa oficialmente publicada y aplicable a cada expediente concreto.</p>
+  </main>
+
+  <footer><div class="wrap">Recurso profesional para arquitectura, ingeniería y construcción. Seguimiento semanal de los Documentos Básicos del CTE.</div></footer>
+
+  <script>
+    const btn=document.getElementById('copyBtn');
+    btn.addEventListener('click',async()=>{const text=document.getElementById('promptText').innerText;try{await navigator.clipboard.writeText(text);btn.textContent='Copiado';setTimeout(()=>btn.textContent='Copiar prompt',1800)}catch(e){const r=document.createRange();r.selectNode(document.getElementById('promptText'));const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();btn.textContent='Copiado';setTimeout(()=>btn.textContent='Copiar prompt',1800)}});
+  </script>
+</body>
+</html>
